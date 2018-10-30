@@ -8,4 +8,4 @@ router.route('/categories')
         CategoriesView.get_all_categories(req, res);
     });
 
-export { router };
+export default router;
