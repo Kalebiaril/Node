@@ -1,5 +1,6 @@
 import product_router from './product';
 import category_router from './categories';
+import user_router from './users';
 import express from 'express';
 import path from 'path';
 //import { check_user_midd } from '../minddlewares';
@@ -16,4 +17,6 @@ export function register_route(app){
     app.use('/', express.static(staticPath));    
     app.use('/api', product_router);
     app.use('/api', category_router);
+    app.use('/api', user_router);
+   
 }

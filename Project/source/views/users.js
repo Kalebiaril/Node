@@ -20,11 +20,10 @@ export async function login(req, res) {
 export async function signUp(req,res){
     let user = req.body;
     if(!user){
-        res.status(400).json({Error: "Product doesn't pass."});
+        res.status(400).json({Error: "User doesn't pass."});
     }
     try{
         user = new User(user);
-
         console.log(user);
         let err = user.validateSync();
         if(err){

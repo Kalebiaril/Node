@@ -14,10 +14,10 @@ export async function get_all_products(req, res) {
 }
 
 export async function create_product(req, res) {
-    if(!req.session.isAdmin)
-    {
-        res.status(401).json({Error: "You are not autorised to create product"}); 
-    }
+    //if(!req.session.isAdmin)
+    //{
+      //  res.status(401).json({Error: "You are not autorised to create product"}); 
+    //}
     let product = req.body;
     if(!product){
         res.status(400).json({Error: "Product doesn't pass."});
