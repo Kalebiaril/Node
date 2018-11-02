@@ -58,13 +58,13 @@ export async function get_product_by_id(req, res) {
 
 export async function get_products_by_category(req,res){ 
     let products = null;
-    let category_id = req.params.category;
-    console.log(category_id);
+    let category = req.params.category;
+    console.log(category);
     if(!category_id){        
-        res.status(404).json({Error: `Product by product id ${category_id} not found.`});
+        res.status(404).json({Error: `Product by category name ${category} not found.`});
     }
     try{
-        products = await Product.find({category_id:category_id});
+        products = await Product.find({name:category});
         res.status(200).json(products);
     }
     catch(err){
