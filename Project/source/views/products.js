@@ -42,7 +42,7 @@ export async function create_product(req, res) {
 
 export async function get_product_by_id(req, res) {
     let product = null;
-    let product_id = req.params.id;
+    let product_id = req.params.id;    
     if(!product_id){
         res.status(404).json({Error: `Product by product id ${product_id} not found.`});
     }
@@ -56,10 +56,11 @@ export async function get_product_by_id(req, res) {
     }
 }
 
-export async function get_products_by_category(req,res){
+export async function get_products_by_category(req,res){ 
     let products = null;
-    let category_id = req.params.id;
-    if(!category_id){
+    let category_id = req.params.category;
+    console.log(category_id);
+    if(!category_id){        
         res.status(404).json({Error: `Product by product id ${category_id} not found.`});
     }
     try{

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 let UserSchema = new Schema({
     login: { type: String, required: true },
     password: { type: String, required: true},
-    isAdmin:{type: boolean}
+    isAdmin:{type: Boolean}
 });
 
 let User = mongoose.model('User', UserSchema);
